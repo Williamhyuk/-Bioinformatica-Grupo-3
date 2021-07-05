@@ -43,7 +43,7 @@
       <div class="w3-padding">
        <p>Es una página web para el alineamiento de secuencias y generación de arboles filogenéticos, usando todos los algoritmos aprendidos en clase.</p>
        <p>Alineamiento global(Needleman-Wunsch)</p>
-       <p>Alineamiento loca(Smith-Waterman)</p>
+       <p>Alineamiento local(Smith-Waterman)</p>
        <p> BLAST</p>
        <p>Alineamiento multiple MUSCLE O CLUSTAL </p>
        <p>Jukes-cantor model</p>
@@ -51,7 +51,7 @@
        <p>UPGMA</p>
        <p>Neighbor joining</p>
        <h2>Repositorio:</h2>
-       <h4>https://github.com/UNSA-Computacion-Grafica-Grupo-09/Examen</h4>
+       <h4>https://github.com/ShiirleyOC56/-Bioinformatica-Grupo-3/tree/main/ExamenParcial2</h4>
       </div>
       <footer class="w3-container w3-theme-l1">
       </footer>
@@ -73,7 +73,7 @@
 <div class="w3-third">
   <div class="w3-card w3-container" style="min-height:460px">
 <h3> </h3><br>
-  <img src="{{url_for('static', filename='mili.png')}}" style="height:300px;"/>
+  <img src="{{url_for('static', filename='shim.png')}}" style="height:300px;"/>
   <h3>Shirley Michelle Oxa Cacya</h3><br>
  
   </div>
@@ -108,7 +108,7 @@
     <p>El algoritmo Needleman-Wunsch realiza un alineamiento global de dos secuencias A y B. Fue propuesto en 1970 por Saul Needleman y Christian Wunsch. Es comúnmente usado para alinear secuencias de nucleótidos o proteínas. El algoritmo Needleman–Wunsch es un ejemplo de programación dinámica, y está garantizado que encuentre el alineamiento con el puntaje máximo. </p>
   </div>
 </div>
-<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Alineamiento loca(Smith-Waterman)</button>
+<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Alineamiento local(Smith-Waterman)</button>
 <div id="Demo2" class="w3-hide">
   <div class="w3-container">
     <p>El algoritmo Smith-Waterman es un algoritmo para realizar alineamientos locales de secuencias; determinar regiones similares entre dos secuencias de nucleótidos o proteínas. El algoritmo fue propuesto por Temple Smith y Michael Waterman en 1981. Smith-Waterman es un algoritmo de programación dinámica, posee la atractiva propiedad que garantiza encontrar el alineamiento local óptimo con respecto al sistema de puntaje que está siendo utilizado (que incluye la matriz de sustitución).</p>
@@ -140,11 +140,17 @@
     <p>El modelo de dos parámetros de Kimura (K2P) (Kimura 1980 ) es probablemente el más utilizado de todos los modelos de sustitución de nucleótidos para estimar diferencias genéticas (generalmente llamadas distancias genéticas) y relaciones filogenéticas. No hace falta decir que los modelos precisos para la evolución de secuencias moleculares son muy importantes. Sin embargo, la razón por la que el modelo K2P se usa en exceso en estudios evolutivos y en estudios de códigos de barras de ADN no es porque el modelo K2P sea el modelo más preciso, sino probablemente porque muchos autores lo han usado, o porque es el predeterminado de varios paquetes para análisis filogenéticos.</p>
   </div>
 </div>
-
-<button onclick="myAccFunc('Demo10')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">UPGMA</button>
-<div id="Demo10" class="w3-hide">
+<button onclick="myAccFunc('Demo7')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">UPGMA</button>
+<div id="Demo7" class="w3-hide">
   <div class="w3-container">
     <p>UPGMA es un método de clustering (clasificación) que se basa en la identificación de las parejas más similares y en el cálculo de la media de las distancias entre ellas y el resto de las secuencias para reconstruir el árbol. Resulta conveniente usarlo solo si se cumple la hipótesis del reloj molecular (todas las secuencias han evolucionado a la misma velocidad) dado que genera árboles ultramétricos.</p>
+  </div>
+</div>
+
+<button onclick="myAccFunc('Demo10')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Neighbor joining</button>
+<div id="Demo10" class="w3-hide">
+  <div class="w3-container">
+    <p>El método de Neighbor joining es un método de agrupación de abajo hacia arriba para la creación de árboles fenéticos (fenogramas), creado por Naruya Saitou y Masatoshi Nei en 1987.1​ Por lo general, se utiliza para árboles de secuencias de ADN o de proteína, para lo cual, el algoritmo requiere del conocimiento de la distancia que existe entre cada par de taxones (por ejemplo, especies o secuencias) para formar el árbol.</p>
   </div>
 </div>
 
@@ -152,26 +158,45 @@
 
 
 
-<h2 class="w3-center">Operadores Funcionamiento</h2>
+<h2 class="w3-center">Algoritmos de alinemiento y generación de arboles filogenéticos.</h2>
 <div class="w3-border">
 <div class="w3-bar w3-theme">
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Thresholding')">Thresholding</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Contrast_Stretching')">Contrast Stretching</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Contrast_Outlier')">ConstrastStreching con Outlier </button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Histogram_Equalization')">Histogram Equalization</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Logarithm_Operator')">Logarithm</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Exponential_Operator')">Exponential</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Root_Operator')">Root</button>
-  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Raise_Power')">Raise to Power</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'AlineamientoGlobal')">Alineamiento global</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'AlineamientoLocal')">Alineamientolocal</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'BLAST')">BLAST</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'AlineamientoMultiple')">Alineamiento multiple</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'JukesCantorModel')">Jukes-cantor model</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'KimuraModel')">Kimura model</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'UPGMA')">UPGMA</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'NeighborJoining')">Neighbor joining</button>
 </div>
-<div id="Thresholding" class="w3-container city w3-animate-opacity">
-  <h2>Thresholding</h2>
-    <div class="w3-container m2 w3-red"> 
+<div id="AlineamientoGlobal" class="w3-container city w3-animate-opacity">
+  <h2>Alineamiento global(Needleman-Wunsch)</h2>
+    <div class="w3-container m2 w3-green"> 
       <h2>Pre-Procesamiento</h2>
-        <form action="/thresholding" method="POST" enctype="multipart/form-data">
-        <h4>Cargar una imágen desde un archivo:</h4>
-        <input type="file" name="archivo" class="w3-button w3-theme"  >
+
+        <form action="/AlineamientoGlobal" method="POST" enctype="multipart/form-data" class="form-inline" role="form">
+        <h4>Cargar secuencia ".fasta" desde carpeta:</h4>
+        <input type="file" name="archivo1" class="w3-button w3-theme"  >
         <br> <br>   
+
+        <h4>Cargar secuencia ".fasta" desde carpeta:</h4>
+        <input type="file" name="archivo2" class="w3-button w3-theme"  >
+        <br> <br>
+
+        <label for="name">Gap Extend: </label>
+        <input type="number" name="gapextend" class="w3-button w3-theme" >
+        <br> <br>
+
+        <label for="name">Mismatch: </label>
+        <input type="number" name="mismatch" class="w3-button w3-theme" >
+        <br> <br>
+
+        <label for="name">Match: </label>
+        <input type="number" name="match" class="w3-button w3-theme" >
+        <br> <br>
+
+        
 
         <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBarThresholding')"> <br><br>
         <div class="w3-light-blue">
@@ -184,8 +209,9 @@
     <div class="w3-container m2 w3-blue"> 
 
       <h2>Resultados</h2>
-      {% if imagenThre %}
-            <img src="{{imagenThre}} " style="height:100%;"/>
+      {% if alineamientoGlobal %}
+            <span  >{{alineamientoGlobal}}</span>
+            <!--<img src="{{imaalineamientoGlobalgenThre}} " style="height:100%;"/>-->
            <br><br>
       {% else %}
            <h1> </h1>

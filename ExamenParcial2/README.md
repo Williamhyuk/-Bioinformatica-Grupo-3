@@ -1,11 +1,5 @@
 # Primer Examen
 ## Integrantes:
-* Shirley Michelle Oxa Cacya
+* Milagros Celia Cruz Mamani
+* Carolina Boniee Chavez Lopez
 * Williams Fidel Nifla Catasi
-* Thales Panibra Mamani
-* Alejandra Bustinza cornejo
-
-## Instalacion
-
-* $pip install flask
-* Run: $python3 app.py

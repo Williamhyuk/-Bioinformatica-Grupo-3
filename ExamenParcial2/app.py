@@ -1,5 +1,6 @@
 import os
 from procesamientoImagen import operador_raiz,threholding, operador_exponencial, operador_logaritmico, histogram_equalization, constrast_streching, constrast_streching_out, power_raise
+from alineamientoSecuencias import needleman_wunsch
 from flask import Flask, render_template
 from flask import url_for
 from flask import redirect  
@@ -7,7 +8,7 @@ from flask import request
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = "./static/img"
+app.config['UPLOAD_FOLDER'] = "./static/Fasta"
 
 @app.route('/')
 def home():
@@ -101,7 +102,7 @@ def endPointRaisePower():
         return  render_template('layout.html', imagenRaisePower=imagen_resultado)
 
 
-@app.route("/thresholding", methods=['POST'])
+"""@app.route("/thresholding", methods=['POST'])
 def endPointThresholding():
     if request.method == 'POST':
         f = request.files['archivo']
@@ -111,6 +112,30 @@ def endPointThresholding():
         imagen_resultado = threholding(app.config['UPLOAD_FOLDER'], filename)
 
         return  render_template('layout.html', imagenThre=imagen_resultado)
+"""
+@app.route("/AlineamientoGlobal", methods=['POST'])
+def endPointAlineamientoGlobal():
+    if request.method == 'POST':
+        secuencia1 = request.files['archivo1']
+        filename1 = secure_filename(secuencia1.filename)
+        full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename1)
+        secuencia1.save(full_filename)
 
+        secuencia2 = request.files['archivo2']
+        filename2 = secure_filename(secuencia2.filename)
+        full_filename2 = os.path.join(app.config['UPLOAD_FOLDER'], filename2)
+        secuencia2.save(full_filename2)
+
+        gap = request.form['gapextend']
+        match = request.form['match']
+        mismatch = request.form['mismatch']
+        print("====================",filename1)
+        alineamiento = needleman_wunsch("./static/Fasta/"+filename1,"./static/Fasta/"+filename2,int(float(match)),int(float(mismatch)),int(float(gap)))
+        print("***********************CON EXITO*************************")
+        #filename= secure_filename(f.filename)
+        #return "<h1>Archivo subido exitosamente</h1>"
+        return  render_template('layout.html', alineamientoGlobal=alineamiento)
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
