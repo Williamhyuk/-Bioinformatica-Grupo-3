@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<title>Grupo-3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Menú</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="#" class="w3-bar-item w3-button">Thresholding</a>
+  <a href="#" class="w3-bar-item w3-button">Contrast Stretching</a>
+  <a href="#" class="w3-bar-item w3-button">Histogram Equalization</a>
+  <a href="#" class="w3-bar-item w3-button">Logarithm Operator</a>
+  <a href="#" class="w3-bar-item w3-button">Exponential Operator</a>
+      
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h4>UNIVERSIDAD NACIONAL DE SAN AGUSTÍN</h4>
+  <h2 class="w3-xxxlarge w3-animate-bottom">Bioinformática grupo 3</h2>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">INFORMACIÓN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-l1"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+         <h2>Segundo exámen parcial:</h2>
+      </header>
+      <div class="w3-padding">
+       <p>Es una página web para el alineamiento de secuencias y generación de arboles filogenéticos, usando todos los algoritmos aprendidos en clase.</p>
+       <p>Alineamiento global(Needleman-Wunsch)</p>
+       <p>Alineamiento loca(Smith-Waterman)</p>
+       <p> BLAST</p>
+       <p>Alineamiento multiple MUSCLE O CLUSTAL </p>
+       <p>Jukes-cantor model</p>
+       <p>Kimura model</p>
+       <p>UPGMA</p>
+       <p>Neighbor joining</p>
+       <h2>Repositorio:</h2>
+       <h4>https://github.com/UNSA-Computacion-Grafica-Grupo-09/Examen</h4>
+      </div>
+      <footer class="w3-container w3-theme-l1">
+      </footer>
+    </div>
+</div>
+<hr>
+ 
+<h2 class="w3-center">Integrantes</h2>
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+<h3> </h3><br>
+  <img src="{{url_for('static', filename='willy.png')}}" style="height:300px;"/>
+  <h3>Williams Fidel Nifla Catasi</h3><br>
+ 
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+<h3> </h3><br>
+  <img src="{{url_for('static', filename='mili.png')}}" style="height:300px;"/>
+  <h3>Shirley Michelle Oxa Cacya</h3><br>
+ 
+  </div>
+</div>
+
+ <div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+<h3> </h3><br>
+  <img src="{{url_for('static', filename='caro.png')}}" style="height:300px;"/>
+  <h3>Thales Gonzalo Panibra Mamani</h3><br>
+ 
+  </div>
+</div>
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+<h3> </h3><br>
+  <img src="{{url_for('static', filename='mili.png')}}" style="height:300px;"/>
+  <h3>Alejandra Pamenla Bustinza Cornejo</h3><br>
+ 
+  </div>
+</div>
+
+</div>
+<hr> 
+ 
+  
+<hr>
+<h2 class="w3-center">Descripción de los Algoritmos</h2>
+<button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Alineamiento global(Needleman-Wunsch)</button>
+<div id="Demo1" class="w3-hide">
+  <div class="w3-container">
+    <p>El algoritmo Needleman-Wunsch realiza un alineamiento global de dos secuencias A y B. Fue propuesto en 1970 por Saul Needleman y Christian Wunsch. Es comúnmente usado para alinear secuencias de nucleótidos o proteínas. El algoritmo Needleman–Wunsch es un ejemplo de programación dinámica, y está garantizado que encuentre el alineamiento con el puntaje máximo. </p>
+  </div>
+</div>
+<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Alineamiento loca(Smith-Waterman)</button>
+<div id="Demo2" class="w3-hide">
+  <div class="w3-container">
+    <p>El algoritmo Smith-Waterman es un algoritmo para realizar alineamientos locales de secuencias; determinar regiones similares entre dos secuencias de nucleótidos o proteínas. El algoritmo fue propuesto por Temple Smith y Michael Waterman en 1981. Smith-Waterman es un algoritmo de programación dinámica, posee la atractiva propiedad que garantiza encontrar el alineamiento local óptimo con respecto al sistema de puntaje que está siendo utilizado (que incluye la matriz de sustitución).</p>
+  </div>
+</div>
+<button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">BLAST</button>
+<div id="Demo3" class="w3-hide">
+  <div class="w3-container">
+    <p>Basic Local Alignment Search Tool(BLAST)BLAST encuentra regiones de similitud entre secuencias biológicas. El programa compara secuencias de nucleótidos o proteínas con bases de datos de secuencias y calcula la significación estadística.</p>
+  </div>
+</div>
+<button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Alineamiento multiple MUSCLE O CLUSTAL </button>
+<div id="Demo4" class="w3-hide">
+  <div class="w3-container">
+    <p>Un alineamiento múltiple de secuencias es un alineamiento de más de dos secuencias. Estas secuencias, como en el caso de los alieamientos por parejas pueden ser ADN, ARN o proteína. En todos los casos los algoritmos de alineamiento múltiple asumen que las secuencias que estamos alineando descienden de un antepasado común y lo que intentamos hacer es alinear las posiciones homólogas.</p>
+  </div>
+</div>
+
+<button onclick="myAccFunc('Demo5')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Jukes-cantor model</button>
+<div id="Demo5" class="w3-hide">
+  <div class="w3-container">
+    <p>El modelo de Jukes y Cantor es un modelo que calcula la probabilidad de sustitución de un estado a otro. De este modelo también podemos derivar una fórmula para calcular la distancia entre 2 secuencias. La idea principal detrás de este modelo es la suposición de que la probabilidad de cambiar de un estado a otro diferente es siempre igual. Además, asumimos que los diferentes los sitios son independientes.</p>
+  </div>
+</div>
+
+<button onclick="myAccFunc('Demo6')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Kimura model</button>
+<div id="Demo6" class="w3-hide">
+  <div class="w3-container">
+    <p>El modelo de dos parámetros de Kimura (K2P) (Kimura 1980 ) es probablemente el más utilizado de todos los modelos de sustitución de nucleótidos para estimar diferencias genéticas (generalmente llamadas distancias genéticas) y relaciones filogenéticas. No hace falta decir que los modelos precisos para la evolución de secuencias moleculares son muy importantes. Sin embargo, la razón por la que el modelo K2P se usa en exceso en estudios evolutivos y en estudios de códigos de barras de ADN no es porque el modelo K2P sea el modelo más preciso, sino probablemente porque muchos autores lo han usado, o porque es el predeterminado de varios paquetes para análisis filogenéticos.</p>
+  </div>
+</div>
+
+<button onclick="myAccFunc('Demo10')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">UPGMA</button>
+<div id="Demo10" class="w3-hide">
+  <div class="w3-container">
+    <p>UPGMA es un método de clustering (clasificación) que se basa en la identificación de las parejas más similares y en el cálculo de la media de las distancias entre ellas y el resto de las secuencias para reconstruir el árbol. Resulta conveniente usarlo solo si se cumple la hipótesis del reloj molecular (todas las secuencias han evolucionado a la misma velocidad) dado que genera árboles ultramétricos.</p>
+  </div>
+</div>
+
+
+
+
+
+<h2 class="w3-center">Operadores Funcionamiento</h2>
+<div class="w3-border">
+<div class="w3-bar w3-theme">
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Thresholding')">Thresholding</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Contrast_Stretching')">Contrast Stretching</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Contrast_Outlier')">ConstrastStreching con Outlier </button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Histogram_Equalization')">Histogram Equalization</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Logarithm_Operator')">Logarithm</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Exponential_Operator')">Exponential</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Root_Operator')">Root</button>
+  <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Raise_Power')">Raise to Power</button>
+</div>
+<div id="Thresholding" class="w3-container city w3-animate-opacity">
+  <h2>Thresholding</h2>
+    <div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+        <form action="/thresholding" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBarThresholding')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBarThresholding" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenThre %}
+            <img src="{{imagenThre}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div>  
+
+</div>
+
+<div id="Contrast_Stretching" class="w3-container city w3-animate-opacity">
+  <h2>Contrast Stretching</h2>
+ 
+<div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+       <form action="/contrastre" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBarcontraste')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBarcontraste" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenContraste %}
+            <img src="{{imagenContraste}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div>  
+
+     
+</div>
+
+
+
+<div id="Contrast_Outlier" class="w3-container city w3-animate-opacity">
+  <h2>Constrast Streching con Outlier </h2>
+ 
+<div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+       <form action="/contrasTreO" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('Bar_Contrast_Outlier')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="Bar_Contrast_Outlier" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenendPct %}
+            <img src="{{imagenendPct}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div>  
+
+     
+</div>
+
+<div id="Histogram_Equalization" class="w3-container city w3-animate-opacity">
+  <h2>Histogram Equalization</h2>
+  
+   <div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+      <form action="/histEquali" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBarq')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBarq" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenq %}
+            <img src="{{imagenq}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div>  
+
+
+</div>
+
+<div id="Exponential_Operator" class="w3-container city w3-animate-opacity">
+  <h2>Exponential Operator</h2>
+<div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+
+       <form action="/exponencial" method="POST" enctype="multipart/form-data">
+        
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+        <h4> Ingrese un valor de C: </h4><input type="number" id="C" name="C"><br> <br> 
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBare')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBare" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenE %}
+            <img src="{{imagenE}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div> 
+</div>
+
+
+
+<div id="Logarithm_Operator" class="w3-container city w3-animate-opacity">
+  <h2>Logarithm Operator</h2>
+
+    <div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+      <form action="/logaritmico" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBar')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBar" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenL %}
+            <img src="{{imagenL}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div> 
+</div>
+
+
+
+
+
+
+
+<div id="Raise_Power" class="w3-container city w3-animate-opacity">
+  <h2>Raise Power Operator</h2>
+<div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+
+       <form action="/power" method="POST" enctype="multipart/form-data">     
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+        <h4> Ingrese un valor de C: </h4><input type="number" id="b" name="b"><br> <br> 
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBareRP')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBareRP" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenRaisePower %}
+            <img src="{{imagenRaisePower}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div> 
+</div>
+
+
+<div id="Root_Operator" class="w3-container city w3-animate-opacity">
+  <h2>Root Operator</h2>
+   <div class="w3-container m2 w3-red"> 
+      <h2>Pre-Procesamiento</h2>
+      <form action="/raiz" method="POST" enctype="multipart/form-data">
+        <h4>Cargar una imágen desde un archivo:</h4>
+        <input type="file" name="archivo" class="w3-button w3-theme"  >
+        <br> <br>   
+
+        <input type="submit" class="w3-button w3-theme" value="Run" onclick="move('myBarr')"> <br><br>
+        <div class="w3-light-blue">
+        <div id="myBarr" class="w3-center w3-padding w3-theme" style="width:5%">5%</div>
+        </div>
+        <br> <br> 
+      </form>
+    </div> 
+
+    <div class="w3-container m2 w3-blue"> 
+
+      <h2>Resultados</h2>
+      {% if imagenR %}
+            <img src="{{imagenR}} " style="height:100%;"/>
+           <br><br>
+      {% else %}
+           <h1> </h1>
+           <br><br>
+      {% endif %}
+           
+    </div> 
+</div>
+
+
+
+</div>
+
+
+ 
+ 
+ 
+ 
+
+ 
+
+
+ 
+
+</div>
+ 
+<h3> </h3> <br>
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3></h3>
+ 
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+ 
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+ </footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move(name) {
+  var elem = document.getElementById(name);   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
